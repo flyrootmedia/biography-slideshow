@@ -1,0 +1,17 @@
+@import '../../variables';
+
+.site-footer {
+  background-color: $c-bg-inverted;
+  padding: 1.5rem 0;
+
+  p {
+    color: $c-text-primary-inverted;
+    font-size: .8888rem;
+    width: 100%;
+    max-width: calc($slide-width + ($site-side-padding * 2));
+    min-width: 375px;
+    margin: 0 auto;
+    padding: 0 $site-side-padding;
+    box-sizing: border-box;
+  }
+}

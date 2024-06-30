@@ -1,0 +1,52 @@
+@import '../../variables';
+
+.timeline {
+  margin-bottom: 1rem;
+
+  &-indicators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+
+    @media #{$tablets} {
+      justify-content: flex-start;
+      margin-bottom: 20px;
+    }
+
+    &-indicator {
+      display: inline-block;
+      cursor: pointer;
+      margin: 0 6px 10px 6px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: $c-text-secondary-large;
+      transition: all var(--slideTransitionTime) ease;
+
+      @media #{$tablets} {
+        margin: 0 3px 8px 3px;
+        width: 30px;
+        height: 5px;
+        border-radius: 0;
+      }
+
+      &.-active {
+        background-color: $c-active-states;
+      }
+    }
+  }
+
+  &-text {
+    font-size: clamp(1rem, 2.109375vw, 1.5rem);
+    font-weight: 700;
+    min-height: clamp(1.3rem, 2.4vw, 1.8rem);
+    text-align: center;
+
+    @media #{$tablets} {
+      text-align: left;
+      margin-left: 5px;
+    }
+  }
+}

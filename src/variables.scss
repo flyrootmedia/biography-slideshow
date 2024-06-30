@@ -1,0 +1,29 @@
+$c-white: #ffffff;
+$c-gray-1: #222222;
+$c-gray-2: #666666;
+$c-gray-3: #888888;
+$c-gray-4: #dddddd;
+$c-brand-1: #cd2215;
+
+$c-bg-body: $c-white;
+$c-bg-inverted: $c-gray-1;
+$c-text-primary: $c-gray-1;
+$c-text-primary-inverted: $c-white;
+$c-text-secondary-small: $c-gray-2;
+$c-text-secondary-large: $c-gray-3;
+$c-active-states: $c-brand-1;
+
+$f-stack: 'Roboto Condensed', sans-serif;
+
+$site-side-padding: 1rem;
+$slide-width: 1280px;
+$slide-height: 850px;
+$slide-padding-text: clamp(15px, 3.906vw, 50px);
+
+$tabletMinWidth: 768px;
+$desktopMinWidth: 1280px;
+$desktopOffEdgeMinWidth: 1380px;
+
+$tablets: 'screen and (min-width: #{$tabletMinWidth})';
+$desktops: 'screen and (min-width: #{$desktopMinWidth})';
+$desktopsOffEdge: 'screen and (min-width: #{$desktopOffEdgeMinWidth})';
