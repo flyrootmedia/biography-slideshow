@@ -1,20 +1,20 @@
-import { ImageCategoryEnum, IHeaderCategory } from '../Gallery/gallery.types';
+import { ImageCategories, ImageCategoriesKeys, IHeaderCategory } from '../Gallery/gallery.types';
 
 import './siteHeader.scss';
 
 const headerCategories: IHeaderCategory[] = [
-    { category: ImageCategoryEnum.CHILDHOOD, text: 'Childhood' },
-    { category: ImageCategoryEnum.BASS, text: 'Bass & Music' },
-    { category: ImageCategoryEnum.MARINE, text: 'Marine Corps' },
-    { category: ImageCategoryEnum.COLLEGE, text: 'College' },
-    { category: ImageCategoryEnum.PHOTOGRAPHY, text: 'Photography' },
-    { category: ImageCategoryEnum.CAREER, text: 'Career' },
-    { category: ImageCategoryEnum.MOTORCYCLES, text: 'Motorcycles' },
-    { category: ImageCategoryEnum.FAMILY, text: 'Family' },
+    { category: ImageCategories.childhood, text: 'Childhood' },
+    { category: ImageCategories.bass, text: 'Bass & Music' },
+    { category: ImageCategories.marineCorps, text: 'Marine Corps' },
+    { category: ImageCategories.college, text: 'College' },
+    { category: ImageCategories.photography, text: 'Photography' },
+    { category: ImageCategories.career, text: 'Career' },
+    { category: ImageCategories.motorcycles, text: 'Motorcycles' },
+    { category: ImageCategories.family, text: 'Family' },
 ];
 
 interface IProps {
-    activeCategory: ImageCategoryEnum;
+    activeCategory: ImageCategoriesKeys;
 }
 
 const SiteHeader = ({ activeCategory }: IProps) => {

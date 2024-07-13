@@ -4,13 +4,13 @@ import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-sol
 
 import Timeline from '../Timeline';
 
-import { ImageCategoryEnum, ISlide } from './gallery.types';
+import { ImageCategoriesKeys, ISlide } from './gallery.types';
 import slidesData from './slidesData';
 
 import './gallery.scss';
 
 interface IProps {
-    setActiveCategory: (category: ImageCategoryEnum) => void;
+    setActiveCategory: (category: ImageCategoriesKeys) => void;
 }
 
 const Gallery = ({ setActiveCategory }: IProps) => {

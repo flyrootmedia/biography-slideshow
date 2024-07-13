@@ -8,12 +8,12 @@ import SiteHeader from './components/SiteHeader';
 import Gallery from './components/Gallery';
 import SiteFooter from './components/SiteFooter';
 
-import { ImageCategoryEnum } from './components/Gallery/gallery.types';
+import { ImageCategoriesKeys, ImageCategories } from './components/Gallery/gallery.types';
 
 import './app.scss';
 
 const App = () => {
-    const [activeCategory, setActiveCategory] = useState<ImageCategoryEnum>(ImageCategoryEnum.CHILDHOOD);
+    const [activeCategory, setActiveCategory] = useState<ImageCategoriesKeys>(ImageCategories.childhood);
 
     return (
         <>
