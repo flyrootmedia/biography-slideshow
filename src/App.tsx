@@ -13,13 +13,20 @@ import { ImageCategoriesKeys, ImageCategories } from './components/Gallery/galle
 import './app.scss';
 
 const App = () => {
-    const [activeCategory, setActiveCategory] = useState<ImageCategoriesKeys>(ImageCategories.childhood);
+    const [activeCategory, setActiveCategory] = useState<ImageCategoriesKeys>(ImageCategories.none);
+    const [categoryStart, setCategoryStart] = useState<ImageCategoriesKeys>(ImageCategories.none);
 
     return (
         <>
             <div className="main-wrap">
-                <SiteHeader activeCategory={activeCategory} />
-                <Gallery setActiveCategory={setActiveCategory} />
+                <SiteHeader
+                    activeCategory={activeCategory}
+                    setCategoryStart={setCategoryStart}
+                />
+                <Gallery
+                    categoryStart={categoryStart}
+                    setActiveCategory={setActiveCategory}
+                />
             </div>
             <SiteFooter />
         </>

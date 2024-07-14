@@ -4,16 +4,20 @@ import { faCircleChevronLeft, faCircleChevronRight } from '@fortawesome/free-sol
 
 import Timeline from '../Timeline';
 
-import { ImageCategoriesKeys, ISlide } from './gallery.types';
+import { ImageCategoriesKeys, ISlide, ISlideData } from './gallery.types';
 import slidesData from './slidesData';
 
 import './gallery.scss';
 
 interface IProps {
+    categoryStart: ImageCategoriesKeys;
     setActiveCategory: (category: ImageCategoriesKeys) => void;
 }
 
-const Gallery = ({ setActiveCategory }: IProps) => {
+const Gallery = ({
+    categoryStart,
+    setActiveCategory,
+}: IProps) => {
     const SLIDE_WIDTH_DEFAULT = 1280;
     const SLIDE_HEIGHT_DEFAULT = 850;
     const SLIDE_TRANSITION_TIME = 200;
@@ -125,6 +129,20 @@ const Gallery = ({ setActiveCategory }: IProps) => {
         setNavTop(navHeight ? (navHeight / 2) * -1 : NAV_TOP_DEFAULT);
         updateSlideLeft();
     }, [updateSlideLeft, NAV_TOP_DEFAULT]);
+
+    useEffect(() => {
+        const slideIndexForCategory = slidesData.findIndex((slide: ISlideData) => slide.category === categoryStart);
+
+        console.log(categoryStart);
+
+        if (slideIndexForCategory > -1) {
+            setActiveGalleryData(slideIndexForCategory);
+        }
+
+        // TODO: adding setActiveGalleryData to dependency array appears to cause this useEffect to run
+        // when other nav buttons are clicked even though it's memoized. Not sure which state is causing
+        // a rerender
+    }, [categoryStart]);
 
     useEffect(() => {
         handleResize();

@@ -20,7 +20,16 @@
     font-style: italic;
     margin: 0;
 
-    span {
+    button {
+      appearance: none;
+      background: none;
+      border: none;
+      font-family: inherit;
+      font-size: inherit;
+      font-style: inherit;
+      margin: 0 5px 0 0;
+      padding: 0;
+
       &.active {
         color: $c-active-states;
       }

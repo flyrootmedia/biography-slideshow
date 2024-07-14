@@ -1,4 +1,8 @@
-import { ImageCategories, ImageCategoriesKeys, IHeaderCategory } from '../Gallery/gallery.types';
+import {
+    ImageCategories,
+    ImageCategoriesKeys,
+    IHeaderCategory,
+} from '../Gallery/gallery.types';
 
 import './siteHeader.scss';
 
@@ -15,20 +19,28 @@ const headerCategories: IHeaderCategory[] = [
 
 interface IProps {
     activeCategory: ImageCategoriesKeys;
+    setCategoryStart: (category: ImageCategoriesKeys) => void;
 }
 
-const SiteHeader = ({ activeCategory }: IProps) => {
+const SiteHeader = ({
+    activeCategory,
+    setCategoryStart,
+}: IProps) => {
     const renderHeaderCategories = () => (
         headerCategories.map((headerCategory: IHeaderCategory, i: number) => (
-            <span key={headerCategory.text} className={activeCategory === headerCategory.category ? 'active' : ''}>
+            <button
+                key={headerCategory.text}
+                className={activeCategory === headerCategory.category ? 'active' : ''}
+                onClick={() => setCategoryStart(headerCategory.category)}
+            >
                 {`${headerCategory.text}${i !== headerCategories.length - 1 ? ', ' : ''}`}
-            </span>
+            </button>
         ))
     );
 
     return (
         <div className="site-header">
-            <h1><span>Meet</span> Erik R.</h1>
+            <h1 role="button" onClick={() => setCategoryStart(ImageCategories.none)}><span>Meet</span> Erik R.</h1>
             <h2>{renderHeaderCategories()}</h2>
         </div>
     );
